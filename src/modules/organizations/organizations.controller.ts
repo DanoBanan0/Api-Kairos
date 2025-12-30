@@ -19,11 +19,7 @@ export class OrganizationsController {
     @ApiOperation({ summary: 'ADMIN: Reset the API Key for an organization' })
     async resetApiKey(
         @Param('id') id: string,
-        @Headers('x-admin-secret') adminsecret: string,
     ) {
-        if (adminsecret !== process.env.ADMIN_SECRET) {
-            throw new UnauthorizedException('Admin secret is invalid');
-        }
         return this.organizationsService.resetApiKey(id);
     }
 }
