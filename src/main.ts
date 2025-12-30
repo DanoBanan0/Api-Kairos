@@ -23,7 +23,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Organizations')
     .addTag('Inventory')
-    .addApiKey({ type: 'apiKey', name: 'x-rapidapi-proxy-secret', in: 'header' }, 'rapid-api-secret')
+    .addApiKey({ type: 'apiKey', name: 'x-api-key', in: 'header' }, 'x-api-key')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
