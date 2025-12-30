@@ -13,10 +13,10 @@ export class RapidApiGuard implements CanActivate {
             return false;
         }
 
-        if (rapidSecret !== mySecret) {
+        if (rapidSecret === mySecret) {
             return true;
         } else {
-            throw new UnauthorizedException('Acceso no autorizado: credenciales inválidas.');
+            throw new UnauthorizedException('Acceso denegado. Usa RapidAPI.');
         }
     }
 }
